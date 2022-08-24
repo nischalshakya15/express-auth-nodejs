@@ -1,0 +1,18 @@
+branches:
+  only:
+    - dev
+    - master
+git:
+  depth: false
+
+matrix:
+  include:
+    - name: express-auth
+      language: node_js
+      node_js:
+        - "stable"
+      cache:
+        directories:
+          - "node_modules"
+      script:
+        - npm run build
